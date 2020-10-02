@@ -1,0 +1,19 @@
+<div>
+    <h2>Book List</h2>
+    <button (click)="checkout()">Checkout ({{cartItems.length}})</button>
+</div>
+
+
+<div *ngFor="let item of bookList" class="item-container">
+    <div class="img-container">
+        <img src={{item.thumbnailUrl}} alt={{item.title}} width="130" height="150">
+    </div>
+    <div class="desc-container">
+        <div>{{item.title}}</div>
+        <div>Authors: {{item.authors.join(', ')}}</div>
+        <div>Date Published: {{item.publishedDate | date }}</div>
+        <div>Status: {{item.available ? 'Available' : 'Not Available'}}</div>
+        <button [disabled]="!item.available" (click)="addToCart(item.isbn)">Add to Cart</button>
+    </div>
+
+</div>

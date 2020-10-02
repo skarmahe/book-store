@@ -1,0 +1,15 @@
+.item-container {
+    border: 1px solid grey;
+    height: 150px;
+    margin: 10px;
+
+    .img-container {
+        display: inline-block;
+        width: 150px;
+    }
+
+    .desc-container {
+        display: inline-block;
+        width: 400px;
+    }
+}
